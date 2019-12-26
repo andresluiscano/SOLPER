@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SOLPERModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="TIPO_PERMISO">
+      <EntityTypeMapping TypeName="SOLPERModel.TIPO_PERMISO">
+        <MappingFragment StoreEntitySet="TIPO_PERMISO">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

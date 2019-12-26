@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Ver Permisos";
+}
+
+@section Scripts
+{
+    <script src="@Url.Content("~/assets/scripts/TipoPermisoJS.js")"></script>
+}
+
+
+<div class="row">
+    <div class="page-title">
+        <h3>
+            Tipos de permisos <small> Agregá y modifica tipos de permisos</small>
+        </h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <!-- BEGIN TABLE PORTLET-->
+        <div class="portlet light portlet-fit ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-green"></i>
+                    <span class="caption-subject font-green bold uppercase">Tipos de Permiso</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table table-borderless">
+                    <table class="table table-bordered table-striped table-condensed table-light" id="tabla">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Descripcion
+                                </th>
+                                <th>
+                                    
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+    <div class="col-md-5">
+        <!-- BEGIN ABM PORTLET-->
+        <div class="portlet light" id="panelDatosTipoPermiso">
+            <div class="portlet-title">
+                <div class="caption font-green">
+                    <i class="icon-pin font-green"></i>
+                    <span class="caption-subject bold uppercase"> GESTIONAR PERMISO</span>
+                    <span class="caption-helper">
+                        <strong id="tit"></strong>
+                    </span>
+                </div>
+                <div class="actions">
+                    <div class="btn-group">
+                        <a id="newUser" class="btn blue btn-outline btn-circle " href="javascript:;" onclick="clearForm();">
+                            <i class="fa fa-plus"></i> Nuevo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form id="form" role="form">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="alert alert-danger display-hide">
+                                <button class="close" data-close="alert"></button>
+                                <span id="errorLabel"></span>
+                            </div>
+                            <div class="form-group form-md-line-input form-md-floating-label has-success">
+                                <input type="text" class="form-control" name="Descripcion" id="txtDescripcion">
+                                <label>Descripción</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions noborder" align="center">
+                        <button type="button" onclick="enviarForm();" class="btn green-jungle manipulacion-TipoPermiso">Guardar</button>
+                        <button type="button" onclick="clearForm();" class="btn grey-salsa btn-outline">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END ABM PORTLET-->
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿<!-- BEGIN ABM PORTLET-->
+<div class="portlet light" id="panelDatosPermiso">
+    <div class="portlet-title">
+        <div class="caption font-green">
+            <i class="icon-pin font-green"></i>
+            <span class="caption-subject bold uppercase"> GESTIONAR PERMISO</span>
+            <span class="caption-helper">
+                <strong id="tit"></strong>
+            </span>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form id="form" role="form">
+            <div class="form-body">
+                <div class="row">
+                    <div class="alert alert-danger display-hide">
+                        <button class="close" data-close="alert"></button>
+                        <span id="errorLabel"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-md-line-input form-md-floating-label has-success">
+                            <input type="text" class="form-control" name="NombreEmpleado" id="txtNombre">
+                            <label>Nombre</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-md-line-input form-md-floating-label has-success">
+                            <input type="text" class="form-control" name="ApellidosEmpleado" id="txtApellido">
+                            <label>Apellido</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group form-md-line-input has-success">
+                            <label>Tipo de Permiso</label>
+                            <select class="form-control" id="cboTipoPermiso" name="TipoPermiso">
+                                <option value="" selected>Elegir un tipo...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-md-line-input has-success">
+                            <label class="control-label" for="datepicker">Fecha Permiso</label>
+                            <input type="text" class="form-control" id="FechaPermiso" name="FechaPermiso">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions noborder" align="right">
+                <button type="button" onclick="enviarForm();" class="btn green-jungle manipulacion-TipoPermiso">Guardar</button>
+                <button type="button" onclick="clearForm();" class="btn grey-salsa btn-outline">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- END ABM PORTLET-->

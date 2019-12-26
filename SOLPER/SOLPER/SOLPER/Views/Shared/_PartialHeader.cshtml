@@ -1,0 +1,61 @@
+﻿
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN TOP NAVIGATION BAR -->
+    <div class="page-header-inner ">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo" style="width: 180px !important">
+            @*<img src="@Url.Content(@logo)" alt="logo" class="logo-default" style="margin-top: 6px; width: 130px;" />*@
+        </div>
+        <!-- END LOGO -->
+        @Html.Partial("_PartialMenu")
+        <!-- BEGIN TOP NAVIGATION MENU -->
+
+
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                Class1.cs    <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <li class="dropdown dropdown-extended dropdown-dark dropdown-notification" id="header_notification_bar">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <i class="icon-bell"></i>
+                        <span class="badge badge-default" style="display: none"> 0 </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="external">
+                            <h3>
+                                <span class="bold">0</span> Notificaciones
+                            </h3>
+                            <a href="#">Ver Todas</a>
+                        </li>
+                        <li>
+                            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283"></ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END NOTIFICATION DROPDOWN -->
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <li class="dropdown dropdown-user dropdown-dark">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <img id="profilePicture" alt="" class="img-circle" />
+                        <span class="username username-hide-on-mobile">Empleado de Prueba</span>
+                        <!--<i class="fa fa-angle-down"></i>-->
+                    </a>
+                    <!--<ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="#" id="changeProfilePicture">
+                                <i class="icon-user"></i> Cambiar Foto
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="$.oysgroup.logout()">
+                                <i class="icon-key"></i> Desloguearse
+                            </a>
+                        </li>
+                    </ul>-->
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+        </div>
+    <!-- END TOP NAVIGATION BAR -->
+</div>

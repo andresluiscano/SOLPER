@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Ver Permisos";
+}
+
+@section Scripts
+{
+    <script src="@Url.Content("~/assets/scripts/SolicitarPermisoJS.js")"></script>
+    <script src="@Url.Content("~/assets/scripts/VerPermisosJS.js")"></script>
+    <script>
+            $('.nav li').click(function () {
+                $('.nav li').removeClass('active');
+                $(this).addClass('active');
+            })
+            $('#LiVerPermiso').addClass('active');
+    </script>
+}
+
+<div class="row">
+    <div class="page-title">
+        <h3>
+            @ViewBag.Title <small> Gestioná los permisos de los empleados.</small>
+        </h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <!-- BEGIN TABLE PORTLET-->
+        <div class="portlet light portlet-fit ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-layers font-green"></i>
+                    <span class="caption-subject font-green bold uppercase">LISTADO DE PERMISOS</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table table-borderless">
+                    <table class="table table-bordered table-striped table-condensed table-light" id="tabla">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nombre
+                                </th>
+                                <th>
+                                    Apellido
+                                </th>
+                                <th>
+                                    Tipo Permiso
+                                </th>
+                                <th>
+                                    Fecha
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+    <div class="col-md-5">
+       @Html.Partial("_PartialEditarPermiso")
+    </div>
+</div>
+
+<!--MODAL ELIMINAR PERMISO-->
+<div class="modal fade bs-modal-sm" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-default">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Atención</h4>
+            </div>
+            <div class="modal-body">¿Estás seguro que deseas eliminar el permiso seleccionado? </div>
+            <div class="modal-footer">
+                <button type="button" id="btnCancelarEliminar" class="btn grey-salsa btn-outline" data-dismiss="modal">Cancelar</button>
+                <button type="button" id="btnAceptarEliminar" class="btn green-jungle">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

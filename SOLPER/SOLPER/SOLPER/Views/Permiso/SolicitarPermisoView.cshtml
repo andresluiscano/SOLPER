@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Solicitar Permiso";
+}
+
+@section Scripts
+{
+    <script src="@Url.Content("~/assets/scripts/SolicitarPermisoJS.js")"></script>
+    <script>
+        $('.nav li').click(function () {
+            $('.nav li').removeClass('active');
+            $(this).addClass('active');
+        })
+        $('#LiSolicitarPermiso').addClass('active');
+    </script>
+}
+
+<div class="row">
+    <div class="page-title">
+        <h3>
+            Solicitar Permiso <small> Realice el pedido de nuevos permisos</small>
+        </h3>
+    </div>
+</div>
+<div class="row">
+        <!-- BEGIN ABM PORTLET-->
+        @Html.Partial("_PartialEditarPermiso")
+        <!-- END ABM PORTLET-->
+</div>

@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
+}
+
+@section Scripts
+{
+    <script>
+        $('.nav li').click(function () {
+            $('.nav li').removeClass('active');
+            $(this).addClass('active');
+        })
+        $('#LiHome').addClass('active');
+    </script>
+}
+
+<div class="row">
+    <div class="page-title">
+        <h3 class="page-title">
+            Sistema de Permisos
+            <small>Consigna &amp; Resolución</small>
+        </h3>
+    </div>
+</div>
+
+<div class="row">
+    <h4> La empresa X solicita una aplicación web para registrar solicitudes de permisos, para llevar a cabo esta tarea se requiere cumplir con los siguientes pasos: </h4>
+    <h5> <strong>1.</strong>	Crear una tabla con el nombre <strong>Permisos</strong> y los siguientes campos: </h5>
+    <div class="note note-info">
+        <h4 class="block">SQL CODE</h4>
+        <p> CREATE TABLE PERMISOS(
+	            Id int IDENTITY(1,1) PRIMARY KEY,
+	            NombreEmpleado varchar(255) NOT NULL,
+	            ApellidosEmpleado varchar(255) NOT NULL,
+	            TipoPermiso INT NOT NULL,
+	            FechaPermiso DATE NOT NULL,
+            ); 
+        </p>
+    </div>
+    <h5> <strong>2.</strong>	Crear una tabla con el nombre <strong>TipoPermiso</strong> y los siguientes campos:</h5>
+    <div class="note note-info">
+        <h4 class="block">SQL CODE</h4>
+        <p>
+            CREATE TABLE TIPO_PERMISO(
+            Id int IDENTITY(1,1) PRIMARY KEY,
+            Descripcion varchar(255) NOT NULL
+            );
+        </p>
+    </div>
+    <h5> <strong>3.</strong>	Establecer relacion entre <strong>Permisos</strong> y <strong>TipoPermiso</strong> </h5>
+    <h5> <strong>4.</strong>	Crear una aplicacion web en visual studio, puede ser webform o mvc o asp.net core lo que prefieras siempre y cuando no utilices <strong>scaffolding</strong> para crear la conexion entre base de datos y la aplicacion. </h5>
+    <h5> <strong>5.</strong>	Utilizar <strong>EntityFramework</strong>.</h5>
+    <h5> <strong>6.</strong>	La aplicacion tendra dos pantalla que se puedan seleccionar de un menu, en la primera tendras la pantalla <strong>Solicitar Permiso</strong> y la otra se llamara <strong>Ver Permisos</strong></h5>
+    <h5> <strong>7.</strong>	Puedes llenar la table tipo permiso con los datos que crear ejemplo (enfermedad, diligencias, etc etc).</h5>
+    <div class="note note-info">
+        <h4 class="block">SQL CODE</h4>
+        <p>
+            INSERT INTO TIPO_PERMISO (Descripcion) VALUES ('Enfermedad');
+            INSERT INTO TIPO_PERMISO (Descripcion) VALUES ('Diligencias');
+        </p>
+    </div>
+    <h5> <strong>8.</strong>	Puedes usar jquery o cualquier framework javascript que conozca si es necesario.</h5>
+    <h5> <strong>9.</strong>	Los campos que no permiten nulo deben ser validados</h5>
+    <h5><strong>10.</strong>	Solo tendras que hacer la operacion de insertar en la table Permiso desde la pantalla solicitar permiso y eliminar permiso desde la pantalla ver permisos.</h5>
+    <h5><strong>11.</strong> Usar buenas practicas.</h5>
+</div>
+
+

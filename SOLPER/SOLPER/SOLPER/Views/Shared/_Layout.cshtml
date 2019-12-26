@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- CARGAR ESTILOS -->
+    @Html.Partial("_PartialCss")
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-full-width">
+    @{
+        var request = HttpContext.Current.Request;
+        var appUrl = HttpRuntime.AppDomainAppVirtualPath;
+        var baseUrlTemp = $"{request.Url.Scheme}://{request.Url.Authority}{appUrl}";
+        string baseUrl;
+        if (baseUrlTemp[baseUrlTemp.Length - 1] == '/')
+        {
+            baseUrl = baseUrlTemp;
+        }
+        else
+        {
+            baseUrl = baseUrlTemp + "/";
+        }
+    }
+    <input id="baseUrl" type="hidden" value="@baseUrl" />
+
+    @Html.Partial("_PartialModal")
+    @Html.Partial("_PartialHeader")
+
+    <div class="page-container">
+        <div class="page-sidebar-wrapper">
+            <div class="page-content-wrapper">
+                <div class="page-content" style="padding-top: 0 !important">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="page-footer">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="page-footer-inner">
+                @DateTime.Now.Year © SOLPER by Andrés Cano.
+            </div>
+        </div>
+    </div>
+</div>
+    @Html.Partial("_PartialJs")
+    @RenderSection("scripts", required: false)
+    <script>
+    //$("#fotoOS").attr('src', $.oysgroup.hostname + '/assets/img/osmd.PNG').animate({ opacity: 1 }, 'slow');
+    </script>
+</body>
+</html>
+
